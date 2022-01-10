@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    token: null
+    token: localStorage.getItem('spotify-web-player.accesstoken') || null,
 }
 
 const authSlice = createSlice({
