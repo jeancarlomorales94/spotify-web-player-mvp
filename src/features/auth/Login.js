@@ -1,16 +1,9 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import { setCredentials } from './authSlice'
+import spotifyUrl from '../../app/spotifyAuth'
 
 const Login = () => {
-    const dispatch = useDispatch()
-    const navigate = useNavigate();
-
     const onLogin = () => {
-        const user = { username: 'jean', token: 'abcdefg' }
-        dispatch(setCredentials(user))
-        navigate('/')
+        window.location.assign(spotifyUrl)
     }
     return (
         <div>
