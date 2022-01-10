@@ -1,17 +1,22 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { setCredentials } from '../features/auth/authSlice'
+import Main from './Main'
+import Sidebar from './Sidebar'
 
 const Layout = () => {
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
-    const onLogout = () => {
-        dispatch(setCredentials(null, null))
-    }
+    // const onLogout = () => {
+    //     dispatch(setCredentials(null, null))
+    // }
     return (
-        <div>
-            <h2>Layout</h2>
-            <button onClick={onLogout}>Logout</button>
+        <div className='bg-black h-screen overflow-hidden'>
+            {/* <button onClick={onLogout}>Logout</button> */}
+            <main className='flex'>
+                <Sidebar />
+                <Main />
+            </main>
         </div>
     )
 }
