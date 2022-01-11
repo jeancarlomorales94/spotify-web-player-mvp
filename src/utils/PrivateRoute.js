@@ -5,7 +5,7 @@ import { selectCurrentAuthToken } from "../features/auth/authSlice";
 
 const PrivateRoute = ({ children }) => {
     const token = useSelector(selectCurrentAuthToken);
-    return token ? children : <Navigate to="/login" />;
+    return token && token !== 'undefined' ? children : <Navigate to="/login" />;
 }
 
 export default PrivateRoute

@@ -1,9 +1,24 @@
 import { BookOpenIcon, HeartIcon, HomeIcon, PlusCircleIcon, SearchIcon } from '@heroicons/react/outline'
+import { useDispatch } from 'react-redux'
+import { setCredentials } from '../features/auth/authSlice'
 
 const Sidebar = () => {
+    const dispatch = useDispatch()
+    const onLogout = () => {
+        dispatch(setCredentials(null))
+    }
+    const onModifyToken = () => {
+        dispatch(setCredentials({ token: 'newToken' }))
+    }
     return (
         <div className='text-gray-500 p-5 text-sm border-r border-gray-900 overflow-y-scroll scrollbar-hide h-screen'>
             <div className='space-y-4'>
+                <button onClick={onLogout} className='flex items-center space-x-2 hover:text-white'>
+                    <span>Logout</span>
+                </button>
+                <button onClick={onModifyToken} className='flex items-center space-x-2 hover:text-white'>
+                    <span>Remove token</span>
+                </button>
                 <button className='flex items-center space-x-2 hover:text-white'>
                     <HomeIcon className='h-5 w-5' />
                     <span>Home</span>
