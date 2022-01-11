@@ -1,12 +1,20 @@
 import React from "react"
-import { useGetUserPlaylistsQuery } from "../playlists/playlistsSlice"
+import { useDispatch } from "react-redux"
+import { playlistSelected, useGetUserPlaylistsQuery } from "../playlists/playlistsSlice"
+
 const Playlists = () => {
     const { data } = useGetUserPlaylistsQuery()
+
+    const dispatch = useDispatch()
+
+    const onSelectPlaylist = (id) => {
+        dispatch(playlistSelected(id))
+    }
 
     return (
         <React.Fragment>
             {data?.items.map(playlist => (
-                <p key={playlist.id} className='cursor-pointer hover:text-white'>
+                <p key={playlist.id} onClick={() => onSelectPlaylist(playlist.id)} className='cursor-pointer hover:text-white'>
                     {playlist.name}
                 </p>
             ))}
