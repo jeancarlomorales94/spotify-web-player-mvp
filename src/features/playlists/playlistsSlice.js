@@ -2,10 +2,10 @@ import { spotifyApi } from "../api/apiSlice";
 
 const extendedApiSlice = spotifyApi.injectEndpoints({
     endpoints: (builder) => ({
-        getMe: builder.query({
-            query: () => '/me'
+        getUserPlaylists: builder.query({
+            query: () => '/me/playlists'
         })
     }),
 })
 
-export const { useGetMeQuery } = extendedApiSlice
+export const { useGetUserPlaylistsQuery } = extendedApiSlice
