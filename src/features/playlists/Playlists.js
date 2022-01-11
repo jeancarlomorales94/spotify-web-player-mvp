@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { playlistSelected, useGetUserPlaylistsQuery } from "../playlists/playlistsSlice"
 
@@ -6,6 +6,12 @@ const Playlists = () => {
     const { data } = useGetUserPlaylistsQuery()
 
     const dispatch = useDispatch()
+
+    useEffect(() => {
+        if (data) {
+            onSelectPlaylist(data.items[0].id)
+        }
+    }, [data])
 
     const onSelectPlaylist = (id) => {
         dispatch(playlistSelected(id))
