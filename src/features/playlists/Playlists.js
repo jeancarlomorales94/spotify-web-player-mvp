@@ -1,11 +1,10 @@
 import React, { useEffect } from "react"
-import { useDispatch } from "react-redux"
-import { playlistSelected, useGetUserPlaylistsQuery } from "../playlists/playlistsSlice"
+import { useNavigate } from "react-router-dom"
+import { useGetUserPlaylistsQuery } from "../playlists/playlistsSlice"
 
 const Playlists = () => {
     const { data } = useGetUserPlaylistsQuery()
-
-    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     useEffect(() => {
         if (data) {
@@ -14,7 +13,7 @@ const Playlists = () => {
     }, [data])
 
     const onSelectPlaylist = (id) => {
-        dispatch(playlistSelected(id))
+        navigate(`/${id}`)
     }
 
     return (

@@ -1,12 +1,13 @@
-import { useSelector } from "react-redux"
-import { selectCurrentPlaylistId, useGetPlaylistQuery } from "../features/playlists/playlistsSlice"
+import { useGetPlaylistQuery } from "../features/playlists/playlistsSlice"
 import User from "../features/user/User"
 import { skipToken } from '@reduxjs/toolkit/query'
 import React from "react"
 import Songs from "../features/playlists/Songs"
+import { useParams } from "react-router-dom"
 
 const Main = () => {
-    const selectedPlaylistId = useSelector(selectCurrentPlaylistId)
+    const params = useParams()
+    const selectedPlaylistId = params.id
     const { data } = useGetPlaylistQuery(selectedPlaylistId ? selectedPlaylistId : skipToken)
 
     return (

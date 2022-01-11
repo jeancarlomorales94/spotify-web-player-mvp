@@ -4,6 +4,7 @@ import Login from './features/auth/Login';
 import PrivateRoute from './utils/PrivateRoute';
 import Layout from './components/Layout';
 import Callback from './features/auth/Callback';
+import Main from './components/Main';
 
 const App = () => {
   return (
@@ -18,7 +19,9 @@ const App = () => {
               <Layout />
             </PrivateRoute>
           }
-        />
+        >
+          <Route path="/:id" element={<Main />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   )

@@ -1,5 +1,5 @@
 import React from 'react'
-import Main from './Main'
+import { Outlet } from 'react-router-dom'
 import Sidebar from './Sidebar'
 
 const Layout = () => {
@@ -7,7 +7,7 @@ const Layout = () => {
         <div className='bg-black h-screen overflow-hidden'>
             <main className='flex'>
                 <Sidebar />
-                <Main />
+                <Outlet />
             </main>
         </div>
     )
