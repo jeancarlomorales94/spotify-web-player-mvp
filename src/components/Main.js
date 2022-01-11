@@ -1,5 +1,5 @@
 import { ChevronDownIcon } from "@heroicons/react/outline"
-import { useGetMeQuery } from "../features/api/apiSlice"
+import { useGetMeQuery } from "../features/user/userSlice"
 
 const Main = () => {
     const { data } = useGetMeQuery()

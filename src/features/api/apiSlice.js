@@ -3,7 +3,7 @@ import { setCredentials } from '../auth/authSlice'
 
 
 const baseQuery = fetchBaseQuery({
-    baseUrl: 'https://api.spotify.com/v1/',
+    baseUrl: process.env.REACT_APP_SPOTIFY_API_BASE_URL,
     prepareHeaders: (headers, { getState }) => {
         const token = getState().auth.token
         if (token) {
@@ -24,11 +24,6 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
 export const spotifyApi = createApi({
     reducerPath: 'spotifyApi',
     baseQuery: baseQueryWithReauth,
-    endpoints: (builder) => ({
-        getMe: builder.query({
-            query: () => '/me'
-        })
-    }),
+    endpoints: () => ({}),
 })
 
-export const { useGetMeQuery } = spotifyApi
