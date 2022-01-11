@@ -1,21 +1,14 @@
-import { ChevronDownIcon } from "@heroicons/react/outline"
-import { useGetMeQuery } from "../features/user/userSlice"
+import User from "../features/user/User"
 
 const Main = () => {
-    const { data } = useGetMeQuery()
     return (
         <div className="flex-grow">
             <header className="absolute top-5 right-8">
-                <div className="flex items-center bg-black space-x-3 opacity-90 
-                hover:opacity-80 cursor-pointer rounded-full
-                p-1 pr-2 text-white">
-                    <img className="rounded-full w-10 h-10" src={data?.images[0].url} alt="" />
-                    <h2 className="">{data?.display_name}</h2>
-                    <ChevronDownIcon className="h-5 w-5" />
-                </div>
+                <User />
             </header>
             <section className="flex items-end space-x-7 bg-gradient-to-b
             to-black from-red-500 h-80 text-white p-8">
+                <img className="h-44 w-44 shadow-2xl" src="" alt="" />
                 <p>Hello</p>
             </section>
         </div>

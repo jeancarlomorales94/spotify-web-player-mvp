@@ -1,6 +1,4 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
-import { setCredentials } from '../features/auth/authSlice'
 import Main from './Main'
 import Sidebar from './Sidebar'
 
