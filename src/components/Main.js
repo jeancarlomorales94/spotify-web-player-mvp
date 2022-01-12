@@ -19,7 +19,7 @@ const Main = () => {
             to-black from-red-500 h-80 text-white p-8">
                 {data && (
                     <React.Fragment>
-                        <img className="h-44 w-44 shadow-2xl" src={data?.images[0].url} alt="" />
+                        <img className="h-44 w-44 shadow-2xl" src={data?.images[0]?.url} alt="" />
                         <div>
                             <p>PLAYLIST</p>
                             <p className="text-2xl md:text-3xl xl:text-5xl font-bold">{data?.name}</p>
