@@ -8,9 +8,9 @@ const Playlists = () => {
 
     useEffect(() => {
         if (data) {
-            onSelectPlaylist(data.items[0].id)
+            navigate(`/${data.items[0].id}`)
         }
-    }, [data])
+    }, [data, navigate])
 
     const onSelectPlaylist = (id) => {
         navigate(`/${id}`)

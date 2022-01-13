@@ -11,7 +11,7 @@ const Main = () => {
     const { data } = useGetPlaylistQuery(selectedPlaylistId ? selectedPlaylistId : skipToken)
 
     return (
-        <div className="flex-grow">
+        <div className="flex-grow h-screen overflow-y-scroll scrollbar-hide">
             <header className="absolute top-5 right-8">
                 <User />
             </header>
@@ -28,7 +28,7 @@ const Main = () => {
                 )}
             </section>
             <div>
-                <Songs />
+                <Songs playlist={data} />
             </div>
         </div>
     )
