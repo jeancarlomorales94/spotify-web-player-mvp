@@ -1,8 +1,11 @@
+import { useDispatch } from "react-redux"
 import { millisToMinutesAndSeconds } from "../../utils/millisToMinutesAndSeconds"
+import { songSelected } from '../../features/player/playerSlice'
 
 const Song = ({ order, track }) => {
+    const dispatch = useDispatch()
     const onPlaySong = () => {
-
+        dispatch(songSelected(track.track.id))
     }
     return (
         <div onClick={onPlaySong} className="grid grid-cols-2 text-gray-500 py-4 px-5 hover:bg-gray-900 rounded-lg cursor-pointer">
