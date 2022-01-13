@@ -1,6 +1,5 @@
 const scopes = [
     'user-read-private',
-    'user-read-email',
     'user-library-read'
 ]
 

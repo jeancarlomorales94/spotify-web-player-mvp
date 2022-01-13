@@ -3,6 +3,7 @@ import authReducer from '../features/auth/authSlice'
 import { authMiddleware } from '../features/auth/authMiddleware'
 import { spotifyApi } from '../features/api/apiSlice'
 import playerReducer from '../features/player/playerSlice'
+
 export const store = configureStore({
     reducer: {
         auth: authReducer,

@@ -11,7 +11,7 @@ const Main = () => {
     const { data } = useGetPlaylistQuery(selectedPlaylistId ? selectedPlaylistId : skipToken)
 
     return (
-        <div className="flex-grow h-screen overflow-y-scroll scrollbar-hide">
+        <div className="flex-grow h-screen overflow-y-scroll">
             <header className="absolute top-5 right-8">
                 <User />
             </header>

@@ -20,7 +20,7 @@ const App = () => {
             </PrivateRoute>
           }
         >
-          <Route path=":id" element={<Main />} />
+          <Route path="/:id" element={<Main />} />
         </Route>
       </Routes>
     </BrowserRouter>
